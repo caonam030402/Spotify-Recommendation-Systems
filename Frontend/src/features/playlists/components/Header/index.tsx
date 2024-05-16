@@ -1,8 +1,21 @@
+import { authAPI } from '@/apis/auth.api'
 import { Button } from '@/components/ui/button'
+import { useMutation } from '@tanstack/react-query'
 import { Bell, ChevronLeft, ChevronRight, Download } from 'lucide-react'
 import React from 'react'
 
 export default function Header() {
+  const getTokenMutation = useMutation({
+    mutationFn: authAPI.getAccessToken,
+    onSuccess: (data) => {
+      console.log(data)
+    }
+  })
+
+  const handleGetToken = () => {
+    getTokenMutation.mutate()
+  }
+
   return (
     <div className='py-5 flex items-center justify-between sticky top-0 bg-red-700/90 backdrop:blur-md'>
       <div className='flex gap-3'>
@@ -15,7 +28,10 @@ export default function Header() {
       </div>
       <div className='flex items-center gap-4'>
         <Button className='h-10 rounded-full'>Explore Premium</Button>
-        <Button className='h-10 rounded-full space-x-1 bg-primary-foreground border text-white'>
+        <Button
+          onClick={handleGetToken}
+          className='h-10 rounded-full space-x-1 bg-primary-foreground border text-white'
+        >
           <span>
             <Download size={16} />
           </span>

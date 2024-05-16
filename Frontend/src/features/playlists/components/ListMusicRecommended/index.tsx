@@ -79,8 +79,8 @@ export default function ListMusicRecommended() {
       </div>
       <div className='mt-1'>Based on what's in this playlist</div>
       <div className='mt-4'>
-        {listMusic.map((item) => (
-          <ItemMusicRecommended key={item.id} music={item} />
+        {listMusic.map((item, index) => (
+          <ItemMusicRecommended key={item.id} music={item} index={index} />
         ))}
       </div>
     </div>

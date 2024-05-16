@@ -3,6 +3,7 @@ import { IMusic } from '@/types/music.type'
 
 interface IProps {
   music: IMusic
+  index: number
 }
 
 export default function ItemMusicRecommended({ music }: IProps) {

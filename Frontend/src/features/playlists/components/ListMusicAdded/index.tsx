@@ -1,131 +1,135 @@
 import { Button } from '@/components/ui/button'
 import { Clock, Ellipsis, List, PlayIcon } from 'lucide-react'
 import ItemMusicAdded from '../ItemMusicAdded'
+import { ITrask } from '@/types/music.type'
 
-const listMusic = [
-  {
-    id: 1,
-    image:
-      'https://mosaic.scdn.co/640/ab67616d00001e02121a9af58f3604f78dd68f6bab67616d00001e0213584782bb6d165483d296edab67616d00001e0250a744f0ef5c3e260d9de720ab67616d00001e02e19d9c548f323ab0f0299d36',
-    name: 'It yours',
-    album: 'YOU',
-    artist: 'Ali Gatie',
-    dateAdded: '2 week ago',
-    duration: '3:00'
-  },
-  {
-    id: 2,
-    image:
-      'https://mosaic.scdn.co/640/ab67616d00001e02121a9af58f3604f78dd68f6bab67616d00001e0213584782bb6d165483d296edab67616d00001e0250a744f0ef5c3e260d9de720ab67616d00001e02e19d9c548f323ab0f0299d36',
-    name: 'It yours',
-    album: 'YOU',
-    artist: 'Ali Gatie',
-    dateAdded: '2 week ago',
-    duration: '3:00'
-  },
-  {
-    id: 3,
-    image:
-      'https://mosaic.scdn.co/640/ab67616d00001e02121a9af58f3604f78dd68f6bab67616d00001e0213584782bb6d165483d296edab67616d00001e0250a744f0ef5c3e260d9de720ab67616d00001e02e19d9c548f323ab0f0299d36',
-    name: 'It yours',
-    album: 'YOU',
-    artist: 'Ali Gatie',
-    dateAdded: '2 week ago',
-    duration: '3:00'
-  },
-  {
-    id: 4,
-    image:
-      'https://mosaic.scdn.co/640/ab67616d00001e02121a9af58f3604f78dd68f6bab67616d00001e0213584782bb6d165483d296edab67616d00001e0250a744f0ef5c3e260d9de720ab67616d00001e02e19d9c548f323ab0f0299d36',
-    name: 'It yours',
-    album: 'YOU',
-    artist: 'Ali Gatie',
-    dateAdded: '2 week ago',
-    duration: '3:00'
-  },
-  {
-    id: 5,
-    image:
-      'https://mosaic.scdn.co/640/ab67616d00001e02121a9af58f3604f78dd68f6bab67616d00001e0213584782bb6d165483d296edab67616d00001e0250a744f0ef5c3e260d9de720ab67616d00001e02e19d9c548f323ab0f0299d36',
-    name: 'It yours',
-    album: 'YOU',
-    artist: 'Ali Gatie',
-    dateAdded: '2 week ago',
-    duration: '3:00'
-  },
-  {
-    id: 6,
-    image:
-      'https://mosaic.scdn.co/640/ab67616d00001e02121a9af58f3604f78dd68f6bab67616d00001e0213584782bb6d165483d296edab67616d00001e0250a744f0ef5c3e260d9de720ab67616d00001e02e19d9c548f323ab0f0299d36',
-    name: 'It yours',
-    album: 'YOU',
-    artist: 'Ali Gatie',
-    dateAdded: '2 week ago',
-    duration: '3:00'
-  },
-  {
-    id: 1,
-    image:
-      'https://mosaic.scdn.co/640/ab67616d00001e02121a9af58f3604f78dd68f6bab67616d00001e0213584782bb6d165483d296edab67616d00001e0250a744f0ef5c3e260d9de720ab67616d00001e02e19d9c548f323ab0f0299d36',
-    name: 'It yours',
-    album: 'YOU',
-    artist: 'Ali Gatie',
-    dateAdded: '2 week ago',
-    duration: '3:00'
-  },
-  {
-    id: 2,
-    image:
-      'https://mosaic.scdn.co/640/ab67616d00001e02121a9af58f3604f78dd68f6bab67616d00001e0213584782bb6d165483d296edab67616d00001e0250a744f0ef5c3e260d9de720ab67616d00001e02e19d9c548f323ab0f0299d36',
-    name: 'It yours',
-    album: 'YOU',
-    artist: 'Ali Gatie',
-    dateAdded: '2 week ago',
-    duration: '3:00'
-  },
-  {
-    id: 3,
-    image:
-      'https://mosaic.scdn.co/640/ab67616d00001e02121a9af58f3604f78dd68f6bab67616d00001e0213584782bb6d165483d296edab67616d00001e0250a744f0ef5c3e260d9de720ab67616d00001e02e19d9c548f323ab0f0299d36',
-    name: 'It yours',
-    album: 'YOU',
-    artist: 'Ali Gatie',
-    dateAdded: '2 week ago',
-    duration: '3:00'
-  },
-  {
-    id: 4,
-    image:
-      'https://mosaic.scdn.co/640/ab67616d00001e02121a9af58f3604f78dd68f6bab67616d00001e0213584782bb6d165483d296edab67616d00001e0250a744f0ef5c3e260d9de720ab67616d00001e02e19d9c548f323ab0f0299d36',
-    name: 'It yours',
-    album: 'YOU',
-    artist: 'Ali Gatie',
-    dateAdded: '2 week ago',
-    duration: '3:00'
-  },
-  {
-    id: 5,
-    image:
-      'https://mosaic.scdn.co/640/ab67616d00001e02121a9af58f3604f78dd68f6bab67616d00001e0213584782bb6d165483d296edab67616d00001e0250a744f0ef5c3e260d9de720ab67616d00001e02e19d9c548f323ab0f0299d36',
-    name: 'It yours',
-    album: 'YOU',
-    artist: 'Ali Gatie',
-    dateAdded: '2 week ago',
-    duration: '3:00'
-  },
-  {
-    id: 6,
-    image:
-      'https://mosaic.scdn.co/640/ab67616d00001e02121a9af58f3604f78dd68f6bab67616d00001e0213584782bb6d165483d296edab67616d00001e0250a744f0ef5c3e260d9de720ab67616d00001e02e19d9c548f323ab0f0299d36',
-    name: 'It yours',
-    album: 'YOU',
-    artist: 'Ali Gatie',
-    dateAdded: '2 week ago',
-    duration: '3:00'
-  }
-]
+// const listMusic = [
+//   {
+//     id: 1,
+//     image:
+//       'https://mosaic.scdn.co/640/ab67616d00001e02121a9af58f3604f78dd68f6bab67616d00001e0213584782bb6d165483d296edab67616d00001e0250a744f0ef5c3e260d9de720ab67616d00001e02e19d9c548f323ab0f0299d36',
+//     name: 'It yours',
+//     album: 'YOU',
+//     artist: 'Ali Gatie',
+//     dateAdded: '2 week ago',
+//     duration: '3:00'
+//   },
+//   {
+//     id: 2,
+//     image:
+//       'https://mosaic.scdn.co/640/ab67616d00001e02121a9af58f3604f78dd68f6bab67616d00001e0213584782bb6d165483d296edab67616d00001e0250a744f0ef5c3e260d9de720ab67616d00001e02e19d9c548f323ab0f0299d36',
+//     name: 'It yours',
+//     album: 'YOU',
+//     artist: 'Ali Gatie',
+//     dateAdded: '2 week ago',
+//     duration: '3:00'
+//   },
+//   {
+//     id: 3,
+//     image:
+//       'https://mosaic.scdn.co/640/ab67616d00001e02121a9af58f3604f78dd68f6bab67616d00001e0213584782bb6d165483d296edab67616d00001e0250a744f0ef5c3e260d9de720ab67616d00001e02e19d9c548f323ab0f0299d36',
+//     name: 'It yours',
+//     album: 'YOU',
+//     artist: 'Ali Gatie',
+//     dateAdded: '2 week ago',
+//     duration: '3:00'
+//   },
+//   {
+//     id: 4,
+//     image:
+//       'https://mosaic.scdn.co/640/ab67616d00001e02121a9af58f3604f78dd68f6bab67616d00001e0213584782bb6d165483d296edab67616d00001e0250a744f0ef5c3e260d9de720ab67616d00001e02e19d9c548f323ab0f0299d36',
+//     name: 'It yours',
+//     album: 'YOU',
+//     artist: 'Ali Gatie',
+//     dateAdded: '2 week ago',
+//     duration: '3:00'
+//   },
+//   {
+//     id: 5,
+//     image:
+//       'https://mosaic.scdn.co/640/ab67616d00001e02121a9af58f3604f78dd68f6bab67616d00001e0213584782bb6d165483d296edab67616d00001e0250a744f0ef5c3e260d9de720ab67616d00001e02e19d9c548f323ab0f0299d36',
+//     name: 'It yours',
+//     album: 'YOU',
+//     artist: 'Ali Gatie',
+//     dateAdded: '2 week ago',
+//     duration: '3:00'
+//   },
+//   {
+//     id: 6,
+//     image:
+//       'https://mosaic.scdn.co/640/ab67616d00001e02121a9af58f3604f78dd68f6bab67616d00001e0213584782bb6d165483d296edab67616d00001e0250a744f0ef5c3e260d9de720ab67616d00001e02e19d9c548f323ab0f0299d36',
+//     name: 'It yours',
+//     album: 'YOU',
+//     artist: 'Ali Gatie',
+//     dateAdded: '2 week ago',
+//     duration: '3:00'
+//   },
+//   {
+//     id: 1,
+//     image:
+//       'https://mosaic.scdn.co/640/ab67616d00001e02121a9af58f3604f78dd68f6bab67616d00001e0213584782bb6d165483d296edab67616d00001e0250a744f0ef5c3e260d9de720ab67616d00001e02e19d9c548f323ab0f0299d36',
+//     name: 'It yours',
+//     album: 'YOU',
+//     artist: 'Ali Gatie',
+//     dateAdded: '2 week ago',
+//     duration: '3:00'
+//   },
+//   {
+//     id: 2,
+//     image:
+//       'https://mosaic.scdn.co/640/ab67616d00001e02121a9af58f3604f78dd68f6bab67616d00001e0213584782bb6d165483d296edab67616d00001e0250a744f0ef5c3e260d9de720ab67616d00001e02e19d9c548f323ab0f0299d36',
+//     name: 'It yours',
+//     album: 'YOU',
+//     artist: 'Ali Gatie',
+//     dateAdded: '2 week ago',
+//     duration: '3:00'
+//   },
+//   {
+//     id: 3,
+//     image:
+//       'https://mosaic.scdn.co/640/ab67616d00001e02121a9af58f3604f78dd68f6bab67616d00001e0213584782bb6d165483d296edab67616d00001e0250a744f0ef5c3e260d9de720ab67616d00001e02e19d9c548f323ab0f0299d36',
+//     name: 'It yours',
+//     album: 'YOU',
+//     artist: 'Ali Gatie',
+//     dateAdded: '2 week ago',
+//     duration: '3:00'
+//   },
+//   {
+//     id: 4,
+//     image:
+//       'https://mosaic.scdn.co/640/ab67616d00001e02121a9af58f3604f78dd68f6bab67616d00001e0213584782bb6d165483d296edab67616d00001e0250a744f0ef5c3e260d9de720ab67616d00001e02e19d9c548f323ab0f0299d36',
+//     name: 'It yours',
+//     album: 'YOU',
+//     artist: 'Ali Gatie',
+//     dateAdded: '2 week ago',
+//     duration: '3:00'
+//   },
+//   {
+//     id: 5,
+//     image:
+//       'https://mosaic.scdn.co/640/ab67616d00001e02121a9af58f3604f78dd68f6bab67616d00001e0213584782bb6d165483d296edab67616d00001e0250a744f0ef5c3e260d9de720ab67616d00001e02e19d9c548f323ab0f0299d36',
+//     name: 'It yours',
+//     album: 'YOU',
+//     artist: 'Ali Gatie',
+//     dateAdded: '2 week ago',
+//     duration: '3:00'
+//   },
+//   {
+//     id: 6,
+//     image:
+//       'https://mosaic.scdn.co/640/ab67616d00001e02121a9af58f3604f78dd68f6bab67616d00001e0213584782bb6d165483d296edab67616d00001e0250a744f0ef5c3e260d9de720ab67616d00001e02e19d9c548f323ab0f0299d36',
+//     name: 'It yours',
+//     album: 'YOU',
+//     artist: 'Ali Gatie',
+//     dateAdded: '2 week ago',
+//     duration: '3:00'
+//   }
+// ]
+interface IProps {
+  trasks: ITrask[]
+}
 
-export default function ListMusicAdded() {
+export default function ListMusicAdded({ trasks }: IProps) {
   return (
     <div className='bg-gradient-to-b from-red-900/50 to-background p-6'>
       <div className='flex items-center justify-between '>
@@ -152,8 +156,8 @@ export default function ListMusicAdded() {
         </div>
       </div>
       <div>
-        {listMusic.map((item, index) => (
-          <ItemMusicAdded music={item} key={index} />
+        {trasks.map((item, index) => (
+          <ItemMusicAdded trask={item} index={index + 1} key={index} />
         ))}
       </div>
     </div>

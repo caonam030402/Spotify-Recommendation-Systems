@@ -1,13 +1,9 @@
 import './global.css'
-import Playlists from './features/playlists'
-import { ThemeProvider } from './components/theme-provider'
+import useRouteElements from './useRouteElements'
 
 function App() {
-  return (
-    <ThemeProvider defaultTheme='dark' storageKey='vite-ui-theme'>
-      <Playlists />
-    </ThemeProvider>
-  )
+  const routeElements = useRouteElements()
+  return <div>{routeElements}</div>
 }
 
 export default App
