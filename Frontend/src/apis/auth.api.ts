@@ -11,8 +11,8 @@ export const authAPI = {
         'Content-Type': 'application/x-www-form-urlencoded'
       },
       auth: {
-        username: '0dbd0de894a54417ae3df350ff53a166',
-        password: '6bcb6a6feef6481dabf645b6c3f384e5'
+        username: import.meta.env.VITE_CLIENT_ID as string,
+        password: import.meta.env.VITE_CLIENT_SECRET as string
       }
     }
     const data = {
