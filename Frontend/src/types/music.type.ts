@@ -61,3 +61,10 @@ interface IArtist {
   type: string
   uri: string
 }
+
+export interface IMusicRecommended {
+  track_name: string
+  album_image: string
+  artist_name: string
+  album_name: string
+}
