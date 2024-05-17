@@ -30,7 +30,7 @@ export default function ItemMusicAdded({ trask, index }: IProps) {
 
   console.log(trask.track.album.images[2].url)
   return (
-    <div className='hover:bg-gray-50/10 cursor-pointer transition-all group'>
+    <div className='hover:bg-gray-50/10 cursor-pointer transition-all group group rounded-md'>
       <div className='grid grid-cols-12 py-3 px-4 items-center text-sm text-gray-300'>
         <div className='col-span-1'>
           <span className='group-hover:hidden inline'>{index}</span>

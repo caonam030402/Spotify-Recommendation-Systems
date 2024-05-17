@@ -17,7 +17,7 @@ export default function Header() {
   }
 
   return (
-    <div className='py-5 flex items-center justify-between sticky top-0 bg-red-700/90 backdrop:blur-md'>
+    <div className='py-5 px-4 flex w-full items-center justify-between sticky top-0 bg-red-700/90  backdrop:blur-md'>
       <div className='flex gap-3'>
         <div className='w-10 h-10 bg-primary-foreground flex items-center justify-center rounded-full'>
           <ChevronLeft />

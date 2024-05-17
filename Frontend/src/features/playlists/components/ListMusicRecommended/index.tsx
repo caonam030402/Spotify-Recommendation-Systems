@@ -1,71 +1,16 @@
 import { Ellipsis, ListMusic } from 'lucide-react'
-import React from 'react'
 import ItemMusicRecommended from '../ItemMusicRecommended'
-
-const listMusic = [
-  {
-    id: 1,
-    image:
-      'https://mosaic.scdn.co/640/ab67616d00001e02121a9af58f3604f78dd68f6bab67616d00001e0213584782bb6d165483d296edab67616d00001e0250a744f0ef5c3e260d9de720ab67616d00001e02e19d9c548f323ab0f0299d36',
-    name: 'It yours',
-    album: 'YOU',
-    artist: 'Ali Gatie',
-    dateAdded: '2 week ago',
-    duration: '3:00'
-  },
-  {
-    id: 2,
-    image:
-      'https://mosaic.scdn.co/640/ab67616d00001e02121a9af58f3604f78dd68f6bab67616d00001e0213584782bb6d165483d296edab67616d00001e0250a744f0ef5c3e260d9de720ab67616d00001e02e19d9c548f323ab0f0299d36',
-    name: 'It yours',
-    album: 'YOU',
-    artist: 'Ali Gatie',
-    dateAdded: '2 week ago',
-    duration: '3:00'
-  },
-  {
-    id: 3,
-    image:
-      'https://mosaic.scdn.co/640/ab67616d00001e02121a9af58f3604f78dd68f6bab67616d00001e0213584782bb6d165483d296edab67616d00001e0250a744f0ef5c3e260d9de720ab67616d00001e02e19d9c548f323ab0f0299d36',
-    name: 'It yours',
-    album: 'YOU',
-    artist: 'Ali Gatie',
-    dateAdded: '2 week ago',
-    duration: '3:00'
-  },
-  {
-    id: 4,
-    image:
-      'https://mosaic.scdn.co/640/ab67616d00001e02121a9af58f3604f78dd68f6bab67616d00001e0213584782bb6d165483d296edab67616d00001e0250a744f0ef5c3e260d9de720ab67616d00001e02e19d9c548f323ab0f0299d36',
-    name: 'It yours',
-    album: 'YOU',
-    artist: 'Ali Gatie',
-    dateAdded: '2 week ago',
-    duration: '3:00'
-  },
-  {
-    id: 5,
-    image:
-      'https://mosaic.scdn.co/640/ab67616d00001e02121a9af58f3604f78dd68f6bab67616d00001e0213584782bb6d165483d296edab67616d00001e0250a744f0ef5c3e260d9de720ab67616d00001e02e19d9c548f323ab0f0299d36',
-    name: 'It yours',
-    album: 'YOU',
-    artist: 'Ali Gatie',
-    dateAdded: '2 week ago',
-    duration: '3:00'
-  },
-  {
-    id: 6,
-    image:
-      'https://mosaic.scdn.co/640/ab67616d00001e02121a9af58f3604f78dd68f6bab67616d00001e0213584782bb6d165483d296edab67616d00001e0250a744f0ef5c3e260d9de720ab67616d00001e02e19d9c548f323ab0f0299d36',
-    name: 'It yours',
-    album: 'YOU',
-    artist: 'Ali Gatie',
-    dateAdded: '2 week ago',
-    duration: '3:00'
-  }
-]
+import { playlistAPI } from '@/apis/playlist.api'
+import { useQuery } from '@tanstack/react-query'
 
 export default function ListMusicRecommended() {
+  const { data: listMusicRecommended } = useQuery({
+    queryKey: ['music'],
+    queryFn: async () => {
+      return await playlistAPI.getPlaylistRecommended({ playlist_id: '5EH902vV2mzzqBYxWjnuQi', k: 20 })
+    }
+  })
+  console.log(listMusicRecommended?.data)
   return (
     <div className='p-5'>
       <div className='flex items-center justify-between'>
@@ -78,9 +23,9 @@ export default function ListMusicRecommended() {
         <Ellipsis />
       </div>
       <div className='mt-1'>Based on what's in this playlist</div>
-      <div className='mt-4'>
-        {listMusic.map((item, index) => (
-          <ItemMusicRecommended key={item.id} music={item} index={index} />
+      <div className='mt-4 overflow-y-auto'>
+        {listMusicRecommended?.data.map((item, index) => (
+          <ItemMusicRecommended key={item.album_name} music={item} index={index} />
         ))}
       </div>
     </div>
