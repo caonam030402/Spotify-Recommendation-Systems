@@ -7,15 +7,16 @@ import { NavLink } from 'react-router-dom'
 const listPlaylist = [
   {
     name: 'Ml Cao Nam',
-    image: 'https://i.scdn.co/image/ab67706c0000da84e1c7e0f7f8d6f1d7a9e2a8b6',
+    image:
+      'https://mosaic.scdn.co/640/ab67616d00001e02121a9af58f3604f78dd68f6bab67616d00001e0213584782bb6d165483d296edab67616d00001e0250a744f0ef5c3e260d9de720ab67616d00001e02e19d9c548f323ab0f0299d36',
     user: 'Cao nam',
     link: '/playlists/5EH902vV2mzzqBYxWjnuQi'
   },
   {
-    name: 'Ml Quốc Việt',
-    image: 'https://i.scdn.co/image/ab67706c0000da84e1c7e0f7f8d6f1d7a9e2a8b6',
+    name: 'Ml Project',
+    image: 'https://image-cdn-ak.spotifycdn.com/image/ab67706c0000da849b687b2fd5c230b1fa2a7605',
     user: 'Cao nam',
-    link: '/playlists/5EH902vV2mzzqBYxWjnuQi2'
+    link: '/playlists/0p8qzf7K29GzgtZPSDXx7w'
   }
 ]
 
@@ -71,11 +72,7 @@ export default function SizeNav() {
               }}
             >
               <div className='flex mt-2 gap-3 w-full hover:bg-gray-500/10 p-2'>
-                <img
-                  className='w-12 h-12'
-                  src='https://mosaic.scdn.co/640/ab67616d00001e02121a9af58f3604f78dd68f6bab67616d00001e0213584782bb6d165483d296edab67616d00001e0250a744f0ef5c3e260d9de720ab67616d00001e02e19d9c548f323ab0f0299d36'
-                  alt=''
-                />
+                <img className='w-12 h-12' src={item.image} alt='' />
                 <div>
                   <div className='font-bold '>{item.name}</div>
                   <div className='text-sm opacity-85 text-white'>{item.user}</div>

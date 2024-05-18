@@ -11,10 +11,10 @@ export interface IMusic {
 export interface IPlaylist {
   id: string
   name: string
-  image: {
+  images: {
     url: string
     height: number
-  }
+  }[]
   owner: {
     display_name: string
   }
@@ -67,4 +67,7 @@ export interface IMusicRecommended {
   album_image: string
   artist_name: string
   album_name: string
+  album_release_date: string
+  duration_ms: number
+  popularity: number
 }
