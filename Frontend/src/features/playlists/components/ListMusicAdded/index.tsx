@@ -2,6 +2,7 @@ import { Button } from '@/components/ui/button'
 import { Clock, Ellipsis, List, PlayIcon } from 'lucide-react'
 import ItemMusicAdded from '../ItemMusicAdded'
 import { ITrask } from '@/types/music.type'
+import SkeletonItem from '@/components/skeletonItem'
 
 // const listMusic = [
 //   {
@@ -127,9 +128,10 @@ import { ITrask } from '@/types/music.type'
 // ]
 interface IProps {
   trasks: ITrask[]
+  isLoading: boolean
 }
 
-export default function ListMusicAdded({ trasks }: IProps) {
+export default function ListMusicAdded({ trasks, isLoading }: IProps) {
   return (
     <div className='bg-gradient-to-b from-red-900/50 to-background p-6'>
       <div className='flex items-center justify-between '>
@@ -155,6 +157,16 @@ export default function ListMusicAdded({ trasks }: IProps) {
           <Clock className='inline-block mr-7' />
         </div>
       </div>
+      {isLoading && (
+        <div className='space-y-4 mt-5'>
+          {Array(10)
+            .fill(0)
+            .map((_, index) => (
+              <SkeletonItem key={index} />
+            ))}
+        </div>
+      )}
+
       <div>
         {trasks.map((item, index) => (
           <ItemMusicAdded trask={item} index={index + 1} key={index} />

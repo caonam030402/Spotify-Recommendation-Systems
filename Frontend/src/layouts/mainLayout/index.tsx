@@ -1,5 +1,5 @@
+import Header from '@/components/header'
 import SizeNav from '@/components/sideNav'
-import Header from '@/features/playlists/components/Header'
 import React from 'react'
 
 export default function MainLayout({ children }: { children: React.ReactNode }) {

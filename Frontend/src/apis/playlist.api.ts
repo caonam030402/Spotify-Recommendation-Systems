@@ -9,13 +9,17 @@ interface TBodyDelete {
 }
 
 export const playlistAPI = {
-  getPlaylist() {
-    return http.get<IPlaylist>(`playlists/5EH902vV2mzzqBYxWjnuQi`)
+  getPlaylist(id: string) {
+    return http.get<IPlaylist>(`playlists/${id}`)
   },
   deleteItemPlaylist(body: TBodyDelete) {
     return http.delete(`playlists/5EH902vV2mzzqBYxWjnuQi/tracks`, { data: body })
   },
   getPlaylistRecommended(body: { playlist_id: string; k: number }) {
-    return http.post<IMusicRecommended[]>(`http://127.0.0.1:8080/recommend_from_playlist`, body)
+    return http.post<IMusicRecommended[]>(`http://127.0.0.1:8080/api/recommend_from_playlist/`, body)
+  },
+
+  getPlaylistRecommendedSearchQuery(body: { search_query: string; k: number }) {
+    return http.post<IMusicRecommended[]>(`http://127.0.0.1:8080/api/recommend_based_on_search_query/`, body)
   }
 }
